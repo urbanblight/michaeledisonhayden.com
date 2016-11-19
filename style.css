@@ -1,0 +1,124 @@
+body {
+  font-family: Georgia, Times New Roman;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  text-shadow: none;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0em;
+  word-spacing: 0em;
+  color:black;
+}
+h1 {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 80px;
+  margin:0px;
+  padding:0px;
+  text-align:center;
+  line-height:60px;
+  text-shadow: 4px 4px 4px #aaa;
+}
+
+h1 a {
+  text-decoration:none;
+}
+
+h2 {
+  font-family: 'IM Fell English', serif;
+  font-size: 42px;
+  margin:0px;
+  padding:0px;
+}
+
+h3 {
+  font-family: 'IM Fell English', serif;
+}
+
+hr {
+  width:100%;
+  margin:0;
+  padding:0;
+}
+.container {
+  display: table;
+  vertical-align:middle;
+  margin-left: auto;
+margin-right: auto;
+  text-align:left;
+}
+  .row  {
+    display: table-row;
+    vertical-align:middle;
+  }
+    .left, .right, .middle {
+      display: table-cell;
+      vertical-align:middle;
+    }
+
+#menu {
+  font-size:32px;
+  font-style: italic;
+  text-align:center;
+  width:100%;
+  word-spacing: 1em;
+  font-family: 'IM Fell English SC', serif;
+}
+
+a {
+  color:black;
+}
+
+#menu a {
+  color:black;
+  text-decoration:none;
+  text-align:center;
+}
+
+#menu a:hover {
+  text-shadow: 3px 3px 3px #CCC;
+  text-align:center;
+}
+
+#content, #entry, #page_content,#viewing_area {
+  width:800px;
+  margin:0 auto;
+  padding-top:10px;
+  margin:auto auto;
+text-align: left;
+}
+
+#footer {
+  text-align:center;
+	display:block;
+	width:800px;
+	margin:auto;
+clear: both;
+}
+
+#welcome {
+  background-color:gray;
+  color:white;
+  padding:10px;
+  border-top-left-radius:10px;
+  border-top-right-radius: 10px;
+  vertical-align:top;
+}
+#book-cover {
+  width:143px;
+  float:right;
+  padding:15px;
+  border-right:1px;
+}
+.headline {
+  font-family: 'IM Fell English', serif;
+  font-size: 42px;
+}
+
+img {
+	padding: 10px;
+}
+
+.alignright {
+	float:right;
+}
