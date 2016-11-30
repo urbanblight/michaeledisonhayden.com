@@ -16,3 +16,8 @@ wp-content/plugins/hello.php
 /sitemap.xml
 /sitemap.xml.gz
 
+# Custom to MichaelEdisonHayden.com
+
+# root user's password for the MySQL database
+# used in deployment documented in README
+password.txt
