@@ -13,7 +13,7 @@ to [this example](https://github.com/kubernetes/kubernetes/tree/master/examples/
 
 #### Create a cluster
 
-`gcloud container clusters create meh --num-nodes 2`
+`gcloud container clusters create <name> --num-nodes 2`
 
 Update your local config to use this new cluster.
 
