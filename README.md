@@ -3,52 +3,27 @@
 Michael Edison Hayden is a journalist, author, and playwright. This is his
 WordPress site.
 
-## Deployment
+## Deployment to GCP via Kubernetes
 
-MichaelEdisonHayden.com is hosted on the [Google Cloud Platform](https://console.cloud.google.com/home/dashboard?project=michaeledisonhayden-153721)
-and deployed via [Kubernetes](http://kubernetes.io/docs/), in a similar fashion
-to [this example](https://github.com/kubernetes/kubernetes/tree/master/examples/mysql-wordpress-pd).
+The production instance is currently served on GCP. Deployment documentation for
+that is available [here](k8s/deployment_gcp.md).
 
-### Steps to Deployment
+## Deployment via Docker
 
-#### Create a cluster
+Currently, this method is used for local development.
 
-`gcloud container clusters create meh --num-nodes 2`
+Start a MySQL container:
 
-Update your local config to use this new cluster.
+`docker run -d --name meh-mysql -e MYSQL_ROOT_PASSWORD=<password> mysql`
 
-#### Create GCE PersistentVolumes for persistent storage
+Where `<password>` is the password you would like. Then start the
+WordPress container linked to the newly created MySQL container.
 
-Currently, the site's storage spec is for two persistent disks. It remains to be
-seen how that might be optimized. These disks can be created as follows with the command:
+`docker run -d --name meh-wordpress -p 8080:80 --link meh-mysql:mysql urbanblight/michaeledisonhayden.com`
 
-`gcloud compute disks create --size=20GB --zone=<zone> <name>`
+## Export and Import Content
 
-where `<zone>` is the same zone as the Kubernetes cluster created in the
-previous step.
-
-Then, create the PersistentVolume objects for those disks:
-
-`kubectl create -f k8s/gce-volumes.yaml`
-
-`pdName` in the PersistentVolume should match the `<name>` for the persistent
-disk created in the previous command.
-
-#### Create MySQL secret
-
-`kubectl create secret generic mysql-pass --from-file=/path/to/password.txt`
-
-Where `/path/to/password.txt` is the path to a file containing the root user's
-password for the MySQL database.
-
-#### Deploy MySQL
-
-`kubectl create -f k8s/mysql-deployment.yaml`
-
-Includes Service, PersistentVolumeClaim and Deployment. It may take some time for the pod to complete creation. Wait for the pod to be running, which can be confirmed using the `kubectl get pods` command.
-
-#### Deploy WordPress
-
-`kubectl create -f k8s/wordpress-deployment.yaml`
-
-Includes Service, PersistentVolumeClaim and Deployment. The service will claim be assigned and external IP. This can be viewed by executing `kubectl get services wordpress`.
+Whether via Kubernetes or Docker, a new deployment needs to be updated with
+existing content. In order to do that, follow these instructions to [export](https://codex.wordpress.org/Tools_Export_Screen)
+from the production instance and [import](https://codex.wordpress.org/Importing_Content#WordPress)
+to the new deployment.
