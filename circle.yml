@@ -3,21 +3,13 @@ machine:
     - docker
 
 dependencies:
-  cache_directories:
-    - "~/docker"
+  pre:
+    - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+
   override:
-    - docker info
-    - if [[ -e ~/docker/image.tar ]]; then docker load --input ~/docker/image.tar; fi
-    - docker build -t urbanblight/michaeledisonhayden.com .
-    - mkdir -p ~/docker; docker save urbanblight/michaeledisonhayden.com > ~/docker/image.tar
+    - docker pull urbanblight/michaeledisonhayden.com:latest || true
 
 test:
   override:
-    - true
-
-deployment:
-  hub:
-    branch: master
-    commands:
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push urbanblight/michaeledisonhayden.com
+    - docker build -t urbanblight/michaeledisonhayden.com:latest .
+    - docker push urbanblight/michaeledisonhayden.com:latest
