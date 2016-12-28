@@ -49,6 +49,12 @@ Includes Service, PersistentVolumeClaim and Deployment. It may take some time fo
 
 #### Deploy WordPress
 
+##### Create secret
+
+`kubectl create secret docker-registry meh-registry-key   --docker-server=https://index.docker.io/v1/ --docker-username=<username>   --docker-password=<password>   --docker-email=<email>`
+
+##### Create Deployment
+
 `kubectl create -f k8s/wordpress-deployment.yaml`
 
 Includes Service, PersistentVolumeClaim and Deployment. The service will claim be assigned and external IP. This can be viewed by executing `kubectl get services wordpress`.
