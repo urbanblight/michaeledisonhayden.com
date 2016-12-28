@@ -1,0 +1,21 @@
+machine:
+  services:
+    - docker
+  timezone:
+    - America/Los_Angeles
+
+dependencies:
+  override:
+    - docker info
+    - docker build --rm=false -t urbanblight/michaeledisonhayden.com .
+
+test:
+  override:
+    - true
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push urbanblight/michaeledisonhayden.com
