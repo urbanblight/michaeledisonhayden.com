@@ -2,7 +2,7 @@ machine:
   services:
     - docker
   timezone:
-    - America/Los_Angeles
+    America/Los_Angeles
 
 dependencies:
   override:
