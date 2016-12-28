@@ -9,6 +9,10 @@ MichaelEdisonHayden.com is hosted on the [Google Cloud Platform](https://console
 and deployed via [Kubernetes](http://kubernetes.io/docs/), in a similar fashion
 to [this example](https://github.com/kubernetes/kubernetes/tree/master/examples/mysql-wordpress-pd).
 
+[![CircleCI]
+(https://circleci.com/gh/urbanblight/michaeledisonhayden.com?style=shield)]
+(https://circleci.com/gh/urbanblight/michaeledisonhayden.com.svg?style=svg)
+
 #### Create a cluster
 
 `gcloud container clusters create meh --num-nodes 2`
