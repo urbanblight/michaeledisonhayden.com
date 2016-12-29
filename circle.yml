@@ -1,0 +1,15 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  pre:
+    - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+
+  override:
+    - docker pull urbanblight/michaeledisonhayden.com:latest || true
+
+test:
+  override:
+    - docker build -t urbanblight/michaeledisonhayden.com:latest .
+    - docker push urbanblight/michaeledisonhayden.com:latest

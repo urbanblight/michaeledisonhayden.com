@@ -41,7 +41,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: wordpress:4.6.1-apache
+      - image: urbanblight/michaeledisonhayden.com
         name: wordpress
         env:
         - name: WORDPRESS_DB_HOST
@@ -57,6 +57,8 @@ spec:
         volumeMounts:
         - name: wordpress-persistent-storage
           mountPath: /var/www/html
+      imagePullSecrets:
+        - name: meh-registry-key
       volumes:
       - name: wordpress-persistent-storage
         persistentVolumeClaim:
