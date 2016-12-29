@@ -2,4 +2,5 @@ FROM wordpress
 
 MAINTAINER email@matturban.com
 
-ADD theme/ wp-content/themes/MEH/
+RUN mkdir wp-content/themes/MEH/
+ADD theme/* wp-content/themes/MEH/
