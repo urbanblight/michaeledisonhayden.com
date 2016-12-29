@@ -5,7 +5,7 @@ WordPress site.
 
 ## Deployment to GCP via Kubernetes
 
-MichaelEdisonHayden.com is hosted on the [Google Cloud Platform](https://console.cloud.google.com/home/dashboard?project=michaeledisonhayden-153721)
+MichaelEdisonHayden.com is hosted on the [Google Cloud Platform](https://console.cloud.google.com/home/dashboard?project=michaeledisonhaydendotcom)
 and deployed via [Kubernetes](http://kubernetes.io/docs/), in a similar fashion
 to [this example](https://github.com/kubernetes/kubernetes/tree/master/examples/mysql-wordpress-pd).
 
@@ -13,7 +13,12 @@ to [this example](https://github.com/kubernetes/kubernetes/tree/master/examples/
 
 `gcloud container clusters create meh --num-nodes 2`
 
-Update your local config to use this new cluster.
+Update your local config to use this new cluster:
+
+```
+gcloud config set container/cluster meh
+gcloud container clusters get-credentials meh
+```
 
 #### Create GCE PersistentVolumes for storage
 
@@ -38,10 +43,13 @@ disk created in the previous command.
 
 `kubectl create secret generic mysql-pass --from-file=/path/to/password.txt`
 
-##### Create deployment
-
 Where `/path/to/password.txt` is the path to a file containing the root user's
 password for the MySQL database.
+
+_Pro-Tip: don't include a `#` in the password ;)_
+
+
+##### Create deployment
 
 `kubectl create -f k8s/mysql-deployment.yaml`
 
@@ -51,7 +59,7 @@ Includes Service, PersistentVolumeClaim and Deployment. It may take some time fo
 
 ##### Create secret
 
-`kubectl create secret docker-registry meh-registry-key   --docker-server=https://index.docker.io/v1/ --docker-username=<username>   --docker-password=<password>   --docker-email=<email>`
+`kubectl create secret docker-registry meh-registry-key --docker-server=https://index.docker.io/v1/ --docker-username=<username> --docker-password=<password> --docker-email=<email>`
 
 ##### Create Deployment
 
