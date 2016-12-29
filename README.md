@@ -83,3 +83,7 @@ to the new deployment. On the Import to WordPress screen, it is suggested that y
 ## Activate Theme
 
 The Dockerfile added the theme to the container, but we have to activate it. Do that at `wp-admin/themes.php`.
+
+## Remove/Uninstall
+
+`source teardown.sh`
