@@ -17,7 +17,8 @@ h1 {
   padding:0px;
   text-align:center;
   line-height:60px;
-  text-shadow: 4px 4px 4px #aaa;
+  #text-shadow: 4px 4px 4px #aaa;
+  text-shadow: none;
 }
 
 h1 a {
@@ -80,18 +81,16 @@ a {
   text-align:center;
 }
 
-#content, #entry, #page_content,#viewing_area {
-  width:800px;
-  margin:0 auto;
-  padding-top:10px;
+#content, #entry, #page_content, #viewing_area {
+  width: 100%;
   margin:auto auto;
-text-align: left;
+  text-align: left;
 }
 
 #footer {
   text-align:center;
 	display:block;
-	width:800px;
+	width: 100%;
 	margin:auto;
 clear: both;
 }
@@ -121,4 +120,14 @@ img {
 
 .alignright {
 	float:right;
+}
+
+#social img {
+	width: 40px;
+	padding: 5px;
+	margin: 0px;
+}
+
+li {
+	list-style: none
 }
