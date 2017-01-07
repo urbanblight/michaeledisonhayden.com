@@ -1,133 +1,208 @@
 body {
-  font-family: Georgia, Times New Roman;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  text-shadow: none;
-  text-decoration: none;
-  text-transform: none;
-  letter-spacing: 0em;
-  word-spacing: 0em;
-  color:black;
+    text-decoration: none;
+    letter-spacing: 0em;
+    word-spacing: 0em;
+    text-transform: none;
+
+    color:black;
+    text-shadow: none;
+
+    font-family: Georgia, Times New Roman;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
 }
+
 h1 {
-  font-family: 'IM Fell English SC', serif;
-  font-size: 80px;
-  margin:0px;
-  padding:0px;
-  text-align:center;
-  line-height:60px;
-  #text-shadow: 4px 4px 4px #aaa;
-  text-shadow: none;
+    margin:0px;
+    padding:0px;
+
+    text-align:center;
+
+    text-shadow: none;
+
+    font-family: 'IM Fell English SC', serif;
+    font-size: 72px;
 }
 
 h1 a {
-  text-decoration:none;
+    text-decoration:none;
+}
+
+h1 a:hover {
+    text-shadow: 3px 3px 3px #CCC;
+
 }
 
 h2 {
-  font-family: 'IM Fell English', serif;
-  font-size: 42px;
-  margin:0px;
-  padding:0px;
+    margin:0px;
+    padding:0px;
+
+    font-family: 'IM Fell English', serif;
+    font-size: 42px;
 }
 
 h3 {
-  font-family: 'IM Fell English', serif;
+    font-family: 'IM Fell English', serif;
 }
 
 hr {
-  width:100%;
-  margin:0;
-  padding:0;
+    width:100%;
+    margin:0;
+    padding:0;
 }
-.container {
-  display: table;
-  vertical-align:middle;
-  margin-left: auto;
-margin-right: auto;
-  text-align:left;
-}
-  .row  {
-    display: table-row;
-    vertical-align:middle;
-  }
-    .left, .right, .middle {
-      display: table-cell;
-      vertical-align:middle;
-    }
 
-#menu {
-  font-size:32px;
-  font-style: italic;
-  text-align:center;
-  width:100%;
-  word-spacing: 1em;
-  font-family: 'IM Fell English SC', serif;
+img {
+    padding: 10px;
+}
+
+li {
+    list-style: none;
 }
 
 a {
-  color:black;
+    text-decoration: underline;
+
+    color: black;
+}
+
+a:hover {
+    cursor:pointer;
+}
+
+.container {
+    display: table;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    text-align:left;
+    vertical-align:middle;
+}
+
+.row  {
+    display: table-row;
+
+    vertical-align:middle;
+
+}
+
+.left, .right, .middle {
+    display: table-cell;
+
+    vertical-align:middle;
+}
+
+.headline {
+    font-family: 'IM Fell English', serif;
+    font-size: 42px;
+}
+
+.alignright {
+    float:right;
+}
+
+.menu_item {align: right;display: block;}
+
+#menu {
+    text-align:right;
+    word-spacing: 1em;
+
+    font-family: 'IM Fell English SC', serif;
+    font-size:32px;
+    font-style: italic;
+
+    margin: 15px;
 }
 
 #menu a {
-  color:black;
-  text-decoration:none;
-  text-align:center;
+    text-align:right;
+    text-decoration:none;
+
+    color:black;
+
+    align: right;
 }
 
 #menu a:hover {
   text-shadow: 3px 3px 3px #CCC;
-  text-align:center;
 }
 
 #content, #entry, #page_content, #viewing_area {
-  width: 100%;
-  margin:auto auto;
-  text-align: left;
+    padding: 15px;
+    margin:auto auto;
+
+    text-align: left;
 }
 
 #footer {
-  text-align:center;
-	display:block;
-	width: 100%;
-	margin:auto;
-clear: both;
+    display:block;
+    clear: both;
+
+    width: 100%;
+    margin:auto;
+
+    text-align:center;
 }
 
 #welcome {
-  background-color:gray;
-  color:white;
-  padding:10px;
-  border-top-left-radius:10px;
-  border-top-right-radius: 10px;
-  vertical-align:top;
+    padding:10px;
+
+    vertical-align:top;
+
+    color:white;
+    border-top-left-radius:10px;
+    border-top-right-radius: 10px;
+    background-color:gray;
 }
+
 #book-cover {
-  width:143px;
-  float:right;
-  padding:15px;
-  border-right:1px;
-}
-.headline {
-  font-family: 'IM Fell English', serif;
-  font-size: 42px;
-}
+    float:right;
 
-img {
-	padding: 10px;
-}
+    width:143px;
+    padding:15px;
 
-.alignright {
-	float:right;
+    border-right:1px;
 }
 
 #social img {
-	width: 40px;
-	padding: 5px;
-	margin: 0px;
+    width: 40px;
+    margin: 0px;
+    padding: 5px;
+    display: block;
+    float: right;
+    clear: right;
 }
 
-li {
-	list-style: none
+#photo_credit {
+    padding: 10px;
+
+    font-style: italic;
+}
+
+#notes {
+    height: 250px;
+
+    background-color: #f0f0f5;
+
+    margin: 10px;
+    padding: 15px;
+    border-radius: 25px;
+}
+
+#sidebar {
+    vertical-align: top;
+}
+
+#bio {padding: 15px}
+
+#single_note {
+    border-radius: 25px;
+    background-color: #FFF;
+    padding: 10px;
+}
+
+#note_title {
+    margin: auto;
+    text-align: center;
 }
