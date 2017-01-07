@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<h1><a href="http://www.michaeledisonhayden.com"><?php bloginfo('name')?></a></h1>
+<h1><a href="/"><?php bloginfo('name')?></a></h1>
 <hr>
 <h2 style="text-align:center"><?php strtoupper(single_cat_title()); ?></h2>
 <br />
