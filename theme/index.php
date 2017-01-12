@@ -13,15 +13,15 @@ if (function_exists('get_header')) {
 };
 ?>
 
-<h1><a href="/"><? bloginfo('name')?></a></h1>
-<hr />
-
 <!-- The page layout -->
 <div class="container">
     <div class="left" id="sidebar"><?php get_template_part( 'menu' ); ?></div>
-    <div class="right" id="viewing_area">
-	<div id = "notes">Loading ...</div>
-	<div id = "bio">Loading ...</div>
+    <div class="right">
+	<h1><a href="/"><? bloginfo('name')?></a></h1>
+        <div class="container"  id="viewing_area">
+	    <div id = "notes">Loading ...</div>
+	    <div id = "bio">Loading ...</div>
+        </div>
     </div>
 </div>
 
