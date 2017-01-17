@@ -105,31 +105,6 @@ a:hover {
     float:right;
 }
 
-.menu_item {align: right;display: block;}
-
-#menu {
-    text-align:right;
-    word-spacing: 1em;
-
-    font-family: 'PT Sans Narrow', sans-serif;
-    font-size:2em;
-    font-style: italic;
-
-    margin: 15px;
-}
-
-#menu a {
-    text-align:right;
-    text-decoration:none;
-
-    color:black;
-
-    align: right;
-}
-
-#menu a:hover {
-  text-decoration:underline;
-}
 
 #content, #entry, #page_content, #viewing_area {
     padding: 15px;
@@ -208,4 +183,62 @@ a:hover {
 #note_title {
     margin: auto;
     text-align: center;
+}
+
+/* RESPONSIVE MENU */
+
+.menu_item {align: right;display: block;}
+
+#menu {
+    text-align:right;
+    word-spacing: 1em;
+
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size:2em;
+    font-style: italic;
+
+    margin: 15px;
+}
+
+#menu a {
+    text-align:right;
+    text-decoration:none;
+
+    color:black;
+
+    align: right;
+}
+
+#menu a:hover {
+  text-decoration:underline;
+}
+
+/* When the screen is less than 680 pixels wide, hide all list items.
+    Show the list item that contains the
+    link to open and close the topnav (li.icon) */
+@media screen and (max-width:680px) {
+    ul.menu li.material-icons {
+        float: right;
+        display: inline-block;
+    }
+}
+
+/* The "responsive" class is added to the menu with JavaScript when the user
+    clicks on the icon. This class makes the menu look good on small
+    screens */
+@media screen and (max-width:680px) {
+    ul.menu.responsive {position: relative;}
+    ul.menu.responsive li.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    ul.menu.responsive li {
+        float: none;
+        display: inline;
+    }
+    ul.menu.responsive li a {
+        display: block;
+        text-align: left;
+    }
 }
