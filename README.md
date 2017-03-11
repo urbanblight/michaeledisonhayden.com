@@ -18,9 +18,20 @@ WordPress container linked to the newly created MySQL container.
 
 `docker run -d --name meh-wordpress -p 8080:80 --link meh-mysql:mysql urbanblight/michaeledisonhayden.com`
 
-### Deployment to GCP via Kubernetes
+### Deployment to GCP
 
-Please review the documentation in the [gcp directory](gcp/).
+Currently, MichaelEdisonHayden.com is deployed on GCP using the Google Cloud Launcher. Previously, this was managed manually via Kubernetes and legacy documentation for that is available in the [gcp directory](gcp/).
+
+After [deploying via Google Cloud Launcher](https://console.cloud.google.com/launcher/details/click-to-deploy-images/wordpress), the following is the current process to complete configuration. This is not endgame:
+
+* use `gcloud beta compute scp SOURCE_PATH INSTANCE_NAME:DESTINATION_PATH` to upload theme
+ * Add your user to the `www-data` group with `sudo usermod -a -G www-data USERNAME`
+ * Create directory for the theme: `sudo mkdir /var/www/html/wp-content/themes/THEME_NAME/`
+ * make `www-data` the owner of theme files: `sudo chown -R www-data:www-data /var/www/html/wp-content/themes/THEME_NAME/`
+ * temporarily change perms to allow www-data group to write: `sudo chmod 775 /var/www/html/wp-content/themes/THEME_NAME/`
+ * upload theme files: `gcloud beta compute scp SOURCE_PATH/* INSTANCE_NAME:/var/www/html/wp-content/themes/THEME_NAME/`
+ * set permanent permissions: `sudo chmod -R 644 /var/www/html/wp-content/themes/THEME_NAME/`
+ * @todo: make the theme distributable
 
 ## Set Up WordPress in UI
 
