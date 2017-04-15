@@ -3,8 +3,7 @@
 function MEH_get_recent_notes () {
     $notes = array();
     $query_props = array('post_status' => array('publish'),
-                         'posts_per_page' => 5,
-                         'cat' => 21, # @todo there has to be a better way
+                         'cat' => 706, # @todo there has to be a better way
                          'orderby' => 'date',
                          'order' => 'DESC');
     $recents = new WP_Query($query_props);

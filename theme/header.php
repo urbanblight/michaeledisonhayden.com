@@ -1,8 +1,10 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html>
 <head>
 <title><?php bloginfo('name')?></title>
 <link  href="http://fonts.googleapis.com/css?family=Open+Sans:regular,italic"
 	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
 <link  href="<?php bloginfo('stylesheet_url') ?>" rel="stylesheet">

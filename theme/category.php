@@ -15,9 +15,8 @@ if (function_exists('get_header')) {
 
 <!-- The page layout -->
 <div class="container">
-    <div class="left" id="sidebar"><?php get_template_part( 'menu' ); ?></div>
-    <div class="right">
-	<h1><a href="/"><? bloginfo('name')?></a></h1>
+	<h1><a href="/"><?php bloginfo('name')?></a></h1>
+        <hr>
         <div class="container"  id="viewing_area">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     			<div class="results_content">
@@ -35,4 +34,5 @@ if (function_exists('get_header')) {
 		<?php next_posts_link('&laquo; Previous Entries'); ?>
      </div>
 </div>
+<?php get_template_part( 'menu' ); ?>
 <?php get_footer();?>

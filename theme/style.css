@@ -23,8 +23,8 @@ h1 {
 
     text-shadow: none;
 
-    font-family: 'PT Sans Narrow', Helvetica, Arial, sans-serif;
-    font-size: 4.5em;
+    font-family: 'PT Serif', Georgia, serif;
+    font-size: 8vw;
 }
 
 h1 a {
@@ -40,12 +40,12 @@ h2 {
     margin:0px;
     padding:0px;
 
-    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'PT Serif', Helvetica, Arial, sans-serif;
     font-size: 2em;
 }
 
 h3 {
-    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'PT Serif', Helvetica, Arial, sans-serif;
     font-size: 1.5em;
 }
 
@@ -65,12 +65,11 @@ li {
 
 a {
     text-decoration: underline;
-
     color: black;
 }
 
 a:hover {
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .container {
@@ -85,19 +84,16 @@ a:hover {
 
 .row  {
     display: table-row;
-
     vertical-align:middle;
-
 }
 
 .left, .right, .middle {
     display: table-cell;
-
     vertical-align:middle;
 }
 
 .headline {
-    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 3em;
 }
 
@@ -109,7 +105,6 @@ a:hover {
 #content, #entry, #page_content, #viewing_area {
     padding: 15px;
     margin:auto auto;
-
     text-align: left;
 }
 
@@ -121,6 +116,10 @@ a:hover {
     margin:auto;
 
     text-align:center;
+}
+
+#footer hr {
+    width: 40px;
 }
 
 #welcome {
@@ -141,15 +140,6 @@ a:hover {
     padding:15px;
 
     border-right:1px;
-}
-
-#social img {
-    width: 40px;
-    margin: 0px;
-    padding: 5px;
-    display: block;
-    float: right;
-    clear: right;
 }
 
 #photo_credit {
@@ -183,62 +173,79 @@ a:hover {
 #note_title {
     margin: auto;
     text-align: center;
-}
-
-/* RESPONSIVE MENU */
-
-.menu_item {align: right;display: block;}
-
-#menu {
-    text-align:right;
-    word-spacing: 1em;
-
-    font-family: 'PT Sans Narrow', sans-serif;
-    font-size:2em;
     font-style: italic;
-
-    margin: 15px;
 }
 
-#menu a {
-    text-align:right;
-    text-decoration:none;
+/* RESPONSIVE MENU 
+   based on http://codepen.io/danbuda/post/simple-responsive-html-navbar
+*/
 
-    color:black;
-
-    align: right;
+nav {
+    overflow: hidden;
+    padding: 1em;
 }
 
-#menu a:hover {
-  text-decoration:underline;
+nav .navWide {
+    display: none;
+    margin: 0 auto;
 }
 
-/* When the screen is less than 680 pixels wide, hide all list items.
-    Show the list item that contains the
-    link to open and close the topnav (li.icon) */
-@media screen and (max-width:680px) {
-    ul.menu li.material-icons {
-        float: right;
-        display: inline-block;
-    }
+nav .navWide .wideLinks {
+    text-align: center;
 }
 
-/* The "responsive" class is added to the menu with JavaScript when the user
-    clicks on the icon. This class makes the menu look good on small
-    screens */
-@media screen and (max-width:680px) {
-    ul.menu.responsive {position: relative;}
-    ul.menu.responsive li.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-    ul.menu.responsive li {
-        float: none;
-        display: inline;
-    }
-    ul.menu.responsive li a {
+nav .navWide .wideDiv a {
+    display: inline-block;
+    padding: 0 2em;
+}
+
+nav .navNarrow i {
+    float: left;
+}
+
+.hidden {
+    display: none;
+}
+
+nav .navNarrow .narrowLinks a {
+    display: block;
+    float: left;
+    clear: left;
+    padding: 0.5em 0;
+    font-family: 'PT Serif', Helvetica, Arial, sans-serif;
+    font-size: 2em;
+}
+
+.menuItem {
+    font-family: 'PT Serif', Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-size: 3vw;
+    padding: 0.5em;
+}
+
+.menuItem a {
+    text-decoration: none;
+}
+
+.menuItem a:hover {
+    text-shadow: 3px 3px 3px #CCC;
+
+}
+
+#social {
+    margin: auto;
+}
+
+#social img {
+    width: 80px;
+    margin: auto;
+}
+
+@media (min-width: 680px) {
+    nav .navWide {
         display: block;
-        text-align: left;
+    }
+    nav .navNarrow {
+        display: none;
     }
 }
